@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  background-color: aquamarine;
+}
+
+/* nav-bar */
+#container > .nav-container {
+  height: 10vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+}
+
+#container > .nav-container > h1 {
+  font-family: "Grenze Gotisch", cursive;
+  font-size: 5em;
+}
+
+/* main content styling */
+/* todo-container */
+#container > .todo-container {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.todo-container > .add-todo {
+  height: 10vh;
+  display: grid;
+  grid-template-columns: 50% 10%;
+  grid-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-todo > .task-name {
+  padding: 10px;
+  border-radius: 20px;
+  border-style: none;
+  border: 5px solid #555;
+  box-shadow: -2px 3px 3px #555;
+}
+
+.add-todo > .task-name:hover {
+  border-color: rgba(34, 36, 38, 0.35);
+}
+
+.add-todo > .task-name:focus {
+  outline: none;
+  border-color: #96c8da;
+}
+
+.add-todo > .submit-todo {
+  padding: 10px;
+  border-radius: 20px;
+  border-style: none;
+  border: 5px solid #555;
+  box-shadow: -2px 3px 3px #555;
+}
+
+.add-todo > .submit-todo:hover {
+  cursor: pointer;
+  border-color: rgba(34, 36, 38, 0.35);
+}
+
+.add-todo > .submit-todo:focus {
+  outline: none;
+  border-color: #96c8da;
+}
+
+/* sort tasks drop down*/
+.todo-container > .ui.selection.dropdown {
+  width: 70px;
+  justify-self: flex-end;
+  margin-right: 15%;
+  z-index: 10;
+  border: 5px solid #555;
+  box-shadow: -2px 3px 3px #555;
+}
+/* tasks list */
+.todo-container > .todo-list {
+  min-height: 71.7vh;
+  display: grid;
+  grid-template-columns: 70%;
+  align-content: flex-start;
+  grid-gap: 10px;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.todo-list > .task {
+  box-shadow: -2px 3px 3px #555;
+  height: 50px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 50px;
+  align-items: center;
+  grid-gap: 10px;
+  font-size: 1.5em;
+  background-color: #b22222;
+  color: #eeeeee;
+  border: 5px solid #555;
+}
+
+.todo-list > .task:hover {
+  cursor: pointer;
+  border-color: rgba(34, 36, 38, 0.35);
+}
+
+.fa-trash-alt {
+  justify-self: center;
+  margin-bottom: 40px;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  justify-self: center;
+  margin-bottom: 40px;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+#name {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5em;
+}
+
+.task > #date {
+  font-family: "Josefin Sans", sans-serif;
+  font-style: italic;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+/*task details styling */
+.taskDetail-bg {
+  position: absolute;
+  background-color: rgba(10, 10, 10, 0.5);
+  min-height: 80vh;
+  top: 10vh;
+  width: 100vw;
+  display: none;
+  grid-template-columns: 70vh;
+  grid-template-rows: 70%;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.taskDetail-bg > .task-detail {
+  display: grid;
+  grid-template-columns: 70%;
+  grid-gap: 5px;
+  justify-content: center;
+  background-color: #b22222;
+  padding: 20px;
+  border: 5px solid #555;
+  box-shadow: -2px 3px 3px #555;
+  border-radius: 10px;
+}
+
+.taskDetail-bg > .task-detail:hover {
+  border-color: rgba(34, 36, 38, 0.35);
+}
+
+.taskDetail-bg > .task-detail:focus {
+  border-color: #96c8da;
+}
+
+.task-detail > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.task-detail > #dueDate,
+.task-detail > #priority {
+  padding: 5px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.task-detail > #desc {
+  padding: 30px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+@media only screen and (max-width: 639px) {
+  #container > .nav-container > h1 {
+    font-size: 3.5em;
+  }
+
+  .taskDetail-bg {
+    grid-template-columns: 50vh;
+  }
+
+  .add-todo > .submit-todo {
+    width: 60px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
